@@ -13,7 +13,15 @@ services:
       - 443:443
 
   ctfd:
-    image: ctfd:latest
+    image: ctfd/ctfd:latest
     container_name: isag_ctfd
     expose:
-      - "8080"
+      - "8080:8080"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: monitor_grafana
+    expose:
+      - "3000:9999"
+    environment:
+      GF_SERVER_ROOT_URL: monitor.ctf.kmi.tl
