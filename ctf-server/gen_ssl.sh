@@ -1,0 +1,1 @@
+certbot --standalone -d monitor.ctf.kmi.tl -d ctf.kmi.tl
